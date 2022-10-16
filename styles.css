@@ -1,0 +1,18 @@
+.container {
+  max-width: 1024px;
+  margin: 100px auto;
+}
+
+.selects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.second-select {
+  display: none;
+}
+
+.result {
+  display: none;
+}

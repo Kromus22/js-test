@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="selects">
+      <label for="route">Выберите маршрут</label>
+      <select name="route" id="route">
+        <option value="из A в B">из A в B</option>
+        <option value="из B в A">из B в A</option>
+        <option value="из A в B и обратно в А">из A в B и обратно в А</option>
+      </select>
+
+      <label class="first-select" for="time">Выберите время</label>
+      <select class="first-select" name="time" id="time">
+        <option value="18:00(из A в B)">18:00(из A в B)</option>
+        <option value="18:30(из A в B)">18:30(из A в B)</option>
+        <option value="18:45(из A в B)">18:45(из A в B)</option>
+        <option value="19:00(из A в B)">19:00(из A в B)</option>
+        <option value="19:15(из A в B)">19:15(из A в B)</option>
+        <option value="21:00(из A в B)">21:00(из A в B)</option>
+        <option value="18:30(из B в A)">18:30(из B в A)</option>
+        <option value="18:45(из B в A)">18:45(из B в A)</option>
+        <option value="19:00(из B в A)">19:00(из B в A)</option>
+        <option value="19:15(из B в A)">19:15(из B в A)</option>
+        <option value="19:35(из B в A)">19:35(из B в A)</option>
+        <option value="21:50(из B в A)">21:50(из B в A)</option>
+        <option value="21:55(из B в A)">21:55(из B в A)</option>
+      </select>
+
+      <label class="second-select" for="time">Выберите время</label>
+      <select class="second-select" name="time" id="time">
+        <option value="18:00(из A в B)">18:00(из A в B)</option>
+        <option value="18:30(из A в B)">18:30(из A в B)</option>
+        <option value="18:45(из A в B)">18:45(из A в B)</option>
+        <option value="19:00(из A в B)">19:00(из A в B)</option>
+        <option value="19:15(из A в B)">19:15(из A в B)</option>
+        <option value="21:00(из A в B)">21:00(из A в B)</option>
+        <option value="18:30(из B в A)">18:30(из B в A)</option>
+        <option value="18:45(из B в A)">18:45(из B в A)</option>
+        <option value="19:00(из B в A)">19:00(из B в A)</option>
+        <option value="19:15(из B в A)">19:15(из B в A)</option>
+        <option value="19:35(из B в A)">19:35(из B в A)</option>
+        <option value="21:50(из B в A)">21:50(из B в A)</option>
+        <option value="21:55(из B в A)">21:55(из B в A)</option>
+      </select>
+
+      <label for="num">Количество билетов</label>
+      <input id="num">
+      <button>Посчитать</button>
+
+    </div>
+
+    <div class="result">
+      Вы выбрали 4 билета по маршруту из A в B стоимостью 4000р.
+      Это путешествие займет у вас 40 минут.
+      Теплоход отправляется в 12-00, а прибудет в 18-00.
+    </div>
+  </div>
+
+</body>
+
+</html>
