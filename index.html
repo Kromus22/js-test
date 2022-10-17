@@ -15,46 +15,46 @@
 
   <div class="container">
     <div class="selects">
+
       <label for="route">Выберите маршрут</label>
       <select name="route" id="route">
-        <option value="из A в B">из A в B</option>
+        <option value="из A в B" selected>из A в B</option>
         <option value="из B в A">из B в A</option>
         <option value="из A в B и обратно в А">из A в B и обратно в А</option>
       </select>
 
-      <label class="first-select" for="time">Выберите время</label>
-      <select class="first-select" name="time" id="time">
-        <option value="18:00(из A в B)">18:00(из A в B)</option>
-        <option value="18:30(из A в B)">18:30(из A в B)</option>
-        <option value="18:45(из A в B)">18:45(из A в B)</option>
-        <option value="19:00(из A в B)">19:00(из A в B)</option>
-        <option value="19:15(из A в B)">19:15(из A в B)</option>
-        <option value="21:00(из A в B)">21:00(из A в B)</option>
-        <option value="18:30(из B в A)">18:30(из B в A)</option>
-        <option value="18:45(из B в A)">18:45(из B в A)</option>
-        <option value="19:00(из B в A)">19:00(из B в A)</option>
-        <option value="19:15(из B в A)">19:15(из B в A)</option>
-        <option value="19:35(из B в A)">19:35(из B в A)</option>
-        <option value="21:50(из B в A)">21:50(из B в A)</option>
-        <option value="21:55(из B в A)">21:55(из B в A)</option>
-      </select>
+      <div class="first-select">
+        <label for="time">Выберите время</label>
+        <select name="time" id="time-one">
+          <option value="18:00(из A в B)" selected>18:00(из A в B)</option>
+          <option value="18:30(из A в B)">18:30(из A в B)</option>
+          <option value="18:45(из A в B)">18:45(из A в B)</option>
+          <option value="19:00(из A в B)">19:00(из A в B)</option>
+          <option value="19:15(из A в B)">19:15(из A в B)</option>
+          <option value="21:00(из A в B)">21:00(из A в B)</option>
+          <option value="18:30(из B в A)">18:30(из B в A)</option>
+          <option value="18:45(из B в A)">18:45(из B в A)</option>
+          <option value="19:00(из B в A)">19:00(из B в A)</option>
+          <option value="19:15(из B в A)">19:15(из B в A)</option>
+          <option value="19:35(из B в A)">19:35(из B в A)</option>
+          <option value="21:50(из B в A)">21:50(из B в A)</option>
+          <option value="21:55(из B в A)">21:55(из B в A)</option>
+        </select>
+      </div>
 
-      <label class="second-select" for="time">Выберите время</label>
-      <select class="second-select" name="time" id="time">
-        <option value="18:00(из A в B)">18:00(из A в B)</option>
-        <option value="18:30(из A в B)">18:30(из A в B)</option>
-        <option value="18:45(из A в B)">18:45(из A в B)</option>
-        <option value="19:00(из A в B)">19:00(из A в B)</option>
-        <option value="19:15(из A в B)">19:15(из A в B)</option>
-        <option value="21:00(из A в B)">21:00(из A в B)</option>
-        <option value="18:30(из B в A)">18:30(из B в A)</option>
-        <option value="18:45(из B в A)">18:45(из B в A)</option>
-        <option value="19:00(из B в A)">19:00(из B в A)</option>
-        <option value="19:15(из B в A)">19:15(из B в A)</option>
-        <option value="19:35(из B в A)">19:35(из B в A)</option>
-        <option value="21:50(из B в A)">21:50(из B в A)</option>
-        <option value="21:55(из B в A)">21:55(из B в A)</option>
-      </select>
+      <div class="second-select">
+        <label for="time">Выберите время</label>
+        <select name="time" id="time-two">
+          <option value="18:30(из B в A)" selected>18:30(из B в A)</option>
+          <option value="18:45(из B в A)">18:45(из B в A)</option>
+          <option value="19:00(из B в A)">19:00(из B в A)</option>
+          <option value="19:15(из B в A)">19:15(из B в A)</option>
+          <option value="19:35(из B в A)">19:35(из B в A)</option>
+          <option value="21:50(из B в A)">21:50(из B в A)</option>
+          <option value="21:55(из B в A)">21:55(из B в A)</option>
+        </select>
+      </div>
+
 
       <label for="num">Количество билетов</label>
       <input id="num">
