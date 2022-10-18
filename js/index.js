@@ -135,7 +135,7 @@ button.addEventListener('click', () => {
   result.innerHTML = `
     <p>Вы выбрали ${ticketsNum.value} ${declOfNum(ticketsNum.value, ['билет', 'билета', 'билетов'])} по маршруту ${route.value} стоимостью ${getTotal()}p.
       Это путешествие займет у вас ${time} минут.
-      Теплоход отправляется в ${firstSide.value.substr(0, 5)}, а прибудет в ${travelEndHours}-${travelEndMinutes}.</p>
+      Теплоход отправляется в ${firstSide.value.substr(0, 5)}, а прибудет в ${travelEndHours}:${travelEndMinutes}.</p>
   `;
 
   selects.style.display = 'none';
