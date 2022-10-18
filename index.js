@@ -10,6 +10,14 @@ const secondSideBlock = document.querySelector('.second-select');
 const form = document.querySelector('.form');
 const optionsFirstArr = Array.from(firstSide.options);
 const optionsSecondArr = Array.from(secondSide.options);
+const button = document.querySelector('.button');
+const ticketsNum = document.getElementById('num');
+const selects = document.querySelector('.selects');
+const result = document.querySelector('.result');
+
+// склонение числительных
+const declOfNum = (n, titles) => titles[n % 10 === 1 && n % 100 !== 11 ?
+  0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
 
 
 // показ нужных селектов
@@ -78,4 +86,58 @@ firstSide.addEventListener('change', () => {
       item.setAttribute('style', 'display:block;');
     }
   }));
+});
+
+// цена 
+
+const getTotal = () => {
+  let price = 0;
+  if (route.value !== 'из A в B и обратно в А') {
+    price = +ticketsNum.value * ONE_SIDE_PRICE;
+  } else {
+    price = +ticketsNum.value * TWO_SIDE_PRICE;
+  }
+  return price;
+};
+
+// расчёт времени в пути
+
+const getTotalTravelTime = () => {
+
+  const hoursStart = +firstSide.value.substr(0, 2);
+  const minutesStart = +firstSide.value.substr(3, 2);
+  const aTime = hoursStart * 60 + minutesStart;
+  const hoursEnd = +secondSide.value.substr(0, 2);
+  const minutesEnd = +secondSide.value.substr(3, 2);
+  const bTime = hoursEnd * 60 + minutesEnd;
+  let time = 0;
+  let travelEndHours = 0;
+  let travelEndMinutes = 0;
+
+  if (route.value !== 'из A в B и обратно в А') {
+    time = TRAVEL_TIME;
+    travelEndHours = Math.floor((aTime + TRAVEL_TIME) / MINUTES_IN_HOUR);
+    travelEndMinutes = (aTime + TRAVEL_TIME) - travelEndHours * MINUTES_IN_HOUR;
+  } else {
+    time = bTime - aTime + TRAVEL_TIME;
+    travelEndHours = Math.floor((bTime + TRAVEL_TIME) / MINUTES_IN_HOUR);
+    travelEndMinutes = (bTime + TRAVEL_TIME) - travelEndHours * MINUTES_IN_HOUR;
+  }
+
+  return { time, travelEndHours, travelEndMinutes };
+};
+
+// вывод инфы
+
+button.addEventListener('click', () => {
+
+  const { time, travelEndHours, travelEndMinutes } = getTotalTravelTime();
+  result.innerHTML = `
+    <p>Вы выбрали ${ticketsNum.value} ${declOfNum(ticketsNum.value, ['билет', 'билета', 'билетов'])} по маршруту ${route.value} стоимостью ${getTotal()}p.
+      Это путешествие займет у вас ${time} минут.
+      Теплоход отправляется в ${firstSide.value.substr(0, 5)}, а прибудет в ${travelEndHours}-${travelEndMinutes}.</p>
+  `;
+
+  selects.style.display = 'none';
+  result.style.display = 'block';
 });
